@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Alineación Betis</title>
+
+    <!-- Carga la librería p5.js desde Internet -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  </head>
+  <body>
+    <script>
+     function setup() {
+  createCanvas(800, 500);   // Cambia estos números y verás que el texto NO se recoloca solo
+  background(240);
+  noStroke();
+
+  // Título centrado "a mano" (hemos elegido 320 porque 640/2 = 320)
+  textSize(28);
+  textAlign(CENTER, TOP);
+  fill(20);
+  text("Alineación BETIS", 320, 16);
+
+  // Subtítulo un poco más abajo
+  textSize(16);
+  fill(60);
+  text("Me invento la mitad", 320, 52);
+
+  // Esquinas: colocadas con números fijos
+  textSize(12);
+  fill(220, 0, 0);
+  textAlign(LEFT, TOP);
+  text("Luix Henrique", 70, 100);        // arriba-izquierda
+
+  textAlign(LEFT, TOP);
+  text("Borja Iglesias", 280, 100);
+
+  textAlign(LEFT, TOP);
+  text("Rodri", 480, 100);
+
+  textAlign(LEFT, TOP);
+  text("Guido", 70, 180);
+
+  textAlign(LEFT, TOP);
+  text("Canales", 480, 180);
+ 
+  textAlign(LEFT, TOP);
+  text("Sabaly", 500, 250);
+ 
+  textAlign(LEFT, TOP);
+  text("Alex Moreno", 70, 250);
+
+  textAlign(LEFT, TOP);
+  text("Pezzelia", 210, 250);
+
+  textAlign(LEFT, TOP);
+  text("Luiz Felipe", 350, 250);
+
+  textAlign(LEFT, TOP);
+  text("Rui Silva", 280, 300);
+
+  
+  // "Centro" aproximado a mano (320, 180)
+  textAlign(CENTER, CENTER);
+  textSize(14);
+  fill(30);
+  text("Carvalho", 310, 180);
+}
+</script>

@@ -1,0 +1,47 @@
+<!doctype html> <!-- Indica que es un documento HTML -->
+<html>
+  <head>
+    <meta charset="utf-8" /> 
+    <title>Tu nombre</title> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  </head>
+
+  <body>
+    
+
+
+    <script>
+      function setup() {
+  createCanvas(400, 400);    //
+  background(200);           //
+
+  // Rectángulo sin relleno (solo borde negro)
+  fill(30, 129, 250);
+  rect(170, 310, 50, 90);
+
+  //
+  fill(0, 0, 255); 
+  triangle(0,150,200,0,400,150);
+
+  // Rectángulo rojo semitransparente
+  fill(255, 0, 0, 120);      // Rojo con transparencia
+  rect(70, 230, 100, 60);
+
+  // Rectángulo verde
+  fill(0, 80, 80);
+  rect(230, 230, 100, 60);
+
+//  
+  fill(120, 25, 0, 120);
+ strokeWeight(6);
+  rect(2, 150, 395, 250);
+
+// Rectángulo sin relleno (solo borde negro)
+  fill(200, 19, 40);
+  rect(180, 340, 5, 30);
+
+
+}
+    </script>
+  </body>
+</html>
