@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>A1 — Mi escena con variables</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  </head>
+  <body>
+  <script>
+
+  let x, y, v, d, r;
+  let sx; // sol
+
+  function setup() {
+    createCanvas(900, 500);
+
+    d = min(width, height) * 0.12;
+    r = d / 2;
+
+    // Coche
+    x = -r;
+    y = height * 0.75;
+    v = width / 500;
+
+    // Sol
+    sx = 600;
+  }
+
+  function draw() {
+    background(200, 230, 255);
+
+    // Suelo
+    noStroke();
+    fill(90, 160, 90);
+    rect(0, height * 0.8, width, height * 0.2);
+
+    // --- SOL (detrás de la casa) ---
+    fill(255, 255, 0);
+    circle(sx, 40, 70);
+
+    // --- CASA ---
+    fill(150, 0, 0); 
+    triangle(0,150,200,0,400,150);
+
+    fill(150, 68, 0, 120);
+    strokeWeight(3);
+    stroke(0);
+    rect(2, 150, 395, 250);
+    noStroke();
+
+    fill(40, 0, 0);
+    rect(70, 230, 100, 60);
+
+    fill(40, 0, 0);
+    rect(230, 230, 100, 60);
+
+    fill(30, 129, 250);
+    rect(170, 310, 50, 90);
+
+    fill(200, 19, 40);
+    rect(180, 340, 5, 30);
+
+    fill(0, 129, 0);
+    rect(0, 400, width, 120);
+
+    // --- COCHE ---
+    fill(240, 200, 0);
+    rect(x - d, y - d*0.4, d*2, d*0.8, d*0.1);
+
+    fill(40);
+    circle(x - d*0.6, y + d*0.45, d*0.5);
+    circle(x + d*0.6, y + d*0.45, d*0.5);
+
+    // --- MOVIMIENTO ---
+    x += v;      // coche avanza
+    sx += v / 2; // sol avanza más lento
+
+    // --- BUCLE CONTINUO ---
+    if (x > width + r) { 
+      x = -r; 
+    }
+
+    if (sx > width + 40) {  // 40 = radio del sol
+      sx = -40;
+    }
+
+    // Texto
+    fill(0);
+    textSize(14);
+    text("A1 — Mi escena con variables", 10, 10);
+  }
+
+  </script>
+  </body>
+</html>
