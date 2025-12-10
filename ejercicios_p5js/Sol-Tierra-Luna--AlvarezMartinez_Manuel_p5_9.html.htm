@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tu nombre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  </head>
+  <body>
+  
+  <script>
+   function setup() {
+   createCanvas(3000, 3000);
+ 
+   x_s = width / 2; y_s = height / 2;
+   d_s = width * 0.07; 
+   x_t = width / 1.6; y_t = height / 2;
+   d_t = width * 0.02;
+   x_v = width / 1.6; y_v = height / 2;
+   d_v = width * 0.03;
+   x_j = width / 1.5; y_j = height / 2;
+   d_j = width * 0.03;
+   x_u = width / 1.4; y_u = height / 2;
+   d_u = width * 0.03;
+   x_m = width / 1.3; y_m = height / 2;
+   d_m = width * 0.05;
+   x_n = width / 1.20; y_n = height / 2;
+   d_n = width * 0.01;
+   x_l = width / 1.15; y_l = height / 2;
+   d_l = width * 0.04;
+   x_z = width / 1.10; y_z = height / 2;
+   d_z = width * 0.02;
+   x_j = width / 1.2; y_j = height / 2;
+   d_j = width * 0.01;
+
+   angle = 0;
+   angle_1 = 0;
+angle_2 = 0;
+angle_3 = 0;
+angle_4 = 0;
+angle_5 = 0;
+angle_6 = 0;
+angle_7 = 0;
+angle_8 = 0;
+   
+     }
+	 
+	 function draw() {
+	 background(0);
+	  noStroke();
+	 
+	fill(255, 140, 0);
+	circle(x_s, y_s, d_s);
+	 
+        fill(169, 169, 169);
+        circle(x_t, y_t, d_t);
+
+        fill(184, 134, 11);
+	circle(x_v, y_v, d_v);
+	 
+        fill(0, 206, 209);
+        circle(x_j, y_j, d_j);
+	 
+        fill(255, 140, 0);
+	circle(x_u, y_u, d_u);
+	 
+        fill(255, 240, 245);
+        circle(x_m, y_m, d_m);
+	 
+        fill(240, 230, 140);
+	circle(x_n, y_n, d_n);
+	 
+        fill(224, 255, 255);
+        circle(x_l, y_l, d_l);
+	
+        fill(0, 0, 205);
+        circle(x_z, y_z, d_z);
+        
+        fill(220, 0, 0);
+        circle(x_j, y_j, d_j);
+       
+        x_t = x_s + cos(angle) * d_s;
+        y_t = y_s + sin(angle) * d_s;
+        x_v = x_s + cos(angle_1) * d_s * 1.8;
+        y_v = y_s + sin(angle_1) * d_s * 1.8;
+        x_j = x_s + cos(angle_2) * d_s * 2.7;
+        y_j = y_s + sin(angle_2) * d_s * 2.7;
+        x_u = x_s + cos(angle_3) * d_s * 3.5;
+        y_u = y_s + sin(angle_3) * d_s * 3.5;
+        x_m = x_s + cos(angle_4) * d_s * 4.6;
+        y_m = y_s + sin(angle_4) * d_s * 4.6;
+        x_n = x_s + cos(angle_5) * d_s * 5.7;
+        y_n = y_s + sin(angle_5) * d_s * 5.7;
+        x_l = x_s + cos(angle_6) * d_s * 6.8;
+        y_l = y_s + sin(angle_6) * d_s * 6.8;
+        x_z = x_s + cos(angle_7) * d_s * 7.9;
+        y_z = y_s + sin(angle_7) * d_s * 7.9;
+        x_j = x_v + cos(angle_8) * d_s / 1.8;
+        y_j = y_v + sin(angle_8) * d_s / 1.8;
+        
+
+        angle += 0.01;
+        angle_1 += 0.04;
+angle_2 += 0.024;
+angle_3 += 0.02;
+angle_4 += 0.022;
+angle_5 += 0.015;
+angle_6 += 0.011;
+angle_7 += 0.017;
+angle_8 += 0.08;
+
+
+	 
+	 
+	 }
+	 </script>
+  </body>
+</html>
+	 
