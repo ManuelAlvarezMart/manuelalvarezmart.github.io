@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>hola</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+
+<body>
+<script>
+let xS, yS, dS, rS, vS;
+let xL, yL, dL, rL, vL;
+
+function setup() {
+  createCanvas(900, 500);
+
+  // Sol
+  dS = 0.18 * width;
+  rS = dS / 2;
+  yS = 0.35 * height;
+  xS = -rS;
+  vS = width / 400;
+
+  // Luna
+  dL = dS * 0.5;
+  rL = dL / 2;
+  xL = -rL;          // empieza JUSTO fuera
+  yL = height / 3;
+  vL = vS;
+}
+
+function draw() {
+
+  let esNoche = xS > width + rS;
+
+  // Fondo
+  if (!esNoche) {
+    background(135, 206, 235); // día
+  } else {
+    background(0); // noche
+  }
+
+  // Suelo
+  fill(20, 120, 40);
+  rect(0, height * 0.8, width, height * 0.2);
+
+  // Sol (solo de día)
+  if (!esNoche) {
+    fill(255, 210, 0);
+    circle(xS, yS, dS);
+    xS += vS;
+  }
+
+  // Luna (solo de noche)
+  if (esNoche) {
+    fill(255);               // bien visible
+    circle(xL, yL, dL);
+    xL += vL;
+  }
+
+  // Reinicio del ciclo
+  if (xL > width + rL) {
+    xS = -rS;
+    xL = -rL;
+  }
+}
+</script>
+</body>
+</html>
