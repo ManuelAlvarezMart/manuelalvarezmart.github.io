@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>sol y luna calendario</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+<script>
+let xS, yS, dS, rS, vS;
+let xL, yL, dL, rL, vL;
+let dia, mes, año;
+
+function setup() {
+  createCanvas(900, 500);
+
+  // Sol
+  dS = 0.18 * width;
+  rS = dS / 2;
+  yS = 0.35 * height;
+  xS = -rS;
+  vS = width / 400;
+
+  // Luna
+  dL = dS * 0.5;
+  rL = dL / 2;
+  xL = -rL;
+  yL = height / 3;
+  vL = vS;
+
+  // Fecha inicial
+  dia = 1;
+  mes = 1;
+  año = 2025;
+}
+
+// Función para avanzar un día
+function avanzarDia() {
+  dia++;
+  if (dia > 30) {
+    dia = 1;
+    mes++;
+  }
+  if (mes > 12) {
+    mes = 1;
+    año++;
+  }
+}
+
+function draw() {
+  let esNoche = xS > width + rS;
+
+  // Fondo
+  if (!esNoche) background(135, 206, 235); // día
+  else background(0); // noche
+
+  // Suelo
+  noStroke();
+  fill(20, 120, 40);
+  rect(0, height * 0.8, width, height * 0.2);
+
+  // Sol
+  if (!esNoche) {
+    fill(255, 210, 0);
+    circle(xS, yS, dS);
+    xS += vS;
+  }
+
+  // Luna
+  if (esNoche) {
+    fill(255);
+    circle(xL, yL, dL);
+    xL += vL;
+  }
+
+  // Reinicio del ciclo
+  if (xL > width + rL) {
+    xS = -rS;
+    xL = -rL;
+    avanzarDia(); // Avanza un día cuando la Luna termina
+  }
+
+  // Texto del calendario (siempre dibujado)
+  fill(esNoche ? 255 : 0); // color visible según día/noche
+  textSize(20);
+  text("Fecha: " + dia + "/" + mes + "/" + año, 10, 25);
+}
+</script>
+</body>
+</html>
